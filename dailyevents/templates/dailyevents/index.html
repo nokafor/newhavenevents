@@ -1,0 +1,21 @@
+<p>{{ date }}</p>
+
+<br>
+
+{% for calendar in calendar_list %}
+
+<strong>{{ calendar }}</strong>
+<ul>
+{% for event in calendar.get_events%}
+	<li><a href="{{event.2}}">{{ event.1 }} - {{ event.0 }}</a></li>	
+{% empty %}
+	<p>No events from this calendar today</p>
+{% endfor %}
+</ul>
+
+<!-- {{ calendar.get_events }} -->
+
+<br>
+{% endfor %}
+
+
